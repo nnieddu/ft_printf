@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 17:49:39 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/17 18:43:36 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 17:01:25 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_conversion_xx(char *mf, int i, t_argu ma)
 {
-	unsigned long	n;
-	unsigned long	n2;
+	long	n;
+	long	n2;
 	int				x;
 
 	x = 1;
