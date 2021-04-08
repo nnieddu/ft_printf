@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 16:01:50 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/18 13:37:02 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 14:42:43 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			ft_parsing(char *mf, int i, t_argu ma);
 void			ft_format(char *mf, int i, t_argu ma);
 void			ft_format_n(char *mf, int i, t_argu ma);
 int				ft_atoiformat(char *mf, int i);
-int				ft_strlen(char *s);
+int				ft_strlen_printf(char *s);
 void			ft_toconvert(char *mf, int i, t_argu ma);
 void			ft_toconvert_n(char *mf, int i, t_argu ma);
 void			ft_putchar(char c, t_argu ma);

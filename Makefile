@@ -3,18 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+         #
+#    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/10 14:33:30 by ninieddu          #+#    #+#              #
-#    Updated: 2020/12/03 17:00:34 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/04/08 15:15:48 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	gcc -Wall -Wextra -Werror
 
 NAME	=	libftprintf.a
-
-EXEC	=	a.out
 
 SRCS	=	ft_printf.c\
 			ft_fill_cs.c\
@@ -24,20 +22,24 @@ SRCS	=	ft_printf.c\
 			ft_printf_utils.c\
 			ft_printf_utils_n.c\
 
-OBJ		=	$(SRCS:.c=.o) 
+OPATH	=	objs/
 
-all: 	$(NAME)
+OBJS	=	$(SRCS:%.c=$(OPATH)%.o)
 
-$(OBJ) : ft_printf.h
+all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(OPATH)%.o	:	%.c $(INCS)
+				$(shell mkdir -p objs)
+				$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJS) $(OPATH)
 
 fclean: clean
-	rm -f $(NAME) $(EXEC)
+	rm -f $(NAME)
 
 re : fclean all
 

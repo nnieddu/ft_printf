@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:42:59 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/17 18:15:19 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 13:51:36 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c, t_argu ma)
 	*ma.ret += write(1, &c, 1);
 }
 
-int		ft_strlen(char *s)
+int		ft_strlen_printf(char *s)
 {
 	int		size;
 

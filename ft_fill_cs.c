@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_cs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:55:52 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/18 12:22:21 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 13:51:54 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	ft_fill_r(t_argu ma, char *str)
 		ma.width = -ma.width;
 		ma.minus = 1;
 	}
-	if (ma.precision == 1 && ft_strlen(str) > ma.w_precision)
-		ma.width += ft_strlen(str) - ma.w_precision;
+	if (ma.precision == 1 && ft_strlen_printf(str) > ma.w_precision)
+		ma.width += ft_strlen_printf(str) - ma.w_precision;
 	if (ma.minus == 1)
 	{
 		ft_fill_l(ma, str, c);
@@ -83,7 +83,7 @@ void	ft_fill_r(t_argu ma, char *str)
 	{
 		if (ma.minus == 0 && ma.precision == 0 && ma.zero == 1)
 			c = 48;
-		while (ma.width > ft_strlen(str))
+		while (ma.width > ft_strlen_printf(str))
 		{
 			ft_putchar(c, ma);
 			ma.width--;
@@ -99,7 +99,7 @@ void	ft_fill_l(t_argu ma, char *str, char c)
 	{
 		if (ma.w_precision == 0 && ma.zero == 1)
 			c = 48;
-		while (ma.width > ft_strlen(str))
+		while (ma.width > ft_strlen_printf(str))
 		{
 			ft_putchar(c, ma);
 			ma.width--;
