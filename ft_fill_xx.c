@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_xx.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 17:49:39 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/12/03 17:01:25 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:01:08 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_conversion_xx(char *mf, int i, t_argu ma)
 {
 	long	n;
 	long	n2;
-	int				x;
+	int		x;
 
 	x = 1;
 	n = va_arg(*ma.ptr, unsigned int);
@@ -27,8 +27,11 @@ void	ft_conversion_xx(char *mf, int i, t_argu ma)
 		ma.neg = 1;
 		x++;
 	}
-	while (n2 /= 16)
+	while (n2 > 16)
+	{
+		n2 / 16;
 		x++;
+	}
 	if (n == 0 && ma.w_precision == 0 && ma.precision == 1)
 		ma.width++;
 	ft_conversion_xx_m0(mf[i], ma, x, n);

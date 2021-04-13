@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:42:59 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/08 16:05:24 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:11:32 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c, t_argu ma)
 	*ma.ret += write(1, &c, 1);
 }
 
-int		ft_strlen_printf(char *s)
+int	ft_strlen_printf(char *s)
 {
 	int		size;
 
@@ -27,7 +27,7 @@ int		ft_strlen_printf(char *s)
 	return (size);
 }
 
-int		ft_atoiformat(char *str, int i)
+int	ft_atoiformat(char *str, int i)
 {
 	unsigned long long int	big;
 	int						nbr;
@@ -47,10 +47,10 @@ int		ft_atoiformat(char *str, int i)
 		big = big * 10 + (str[i] - 48);
 		i++;
 	}
-	if (big > 9223372036854775807)
-		return (sign == '-' ? 0 : -1);
 	nbr = big;
-	return (sign == '-' ? -nbr : nbr);
+	if (sign == '-')
+		return (-nbr);
+	return (nbr);
 }
 
 void	ft_putnbr_base(unsigned int n, unsigned int base, int maj, t_argu ma)

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 18:38:11 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/08 16:01:24 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:05:20 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,11 @@ void	ft_convert_pu_n(char mfi, t_argu ma, unsigned long n, int x)
 			return ;
 		}
 		n2 = n;
-		while (n2 /= 16)
+		while (n2 > 16)
+		{
+			n2 / 16;
 			x++;
+		}
 	}
 	ft_convert_pu_n2(mfi, ma, n, x);
 }
@@ -83,20 +86,20 @@ void	ft_convert_pu_n2(char mfi, t_argu ma, unsigned long n, int x)
 		}
 	}
 	if (mfi == 'u')
-		ft_convert_u(ma, x);
+		ft_convert_u(ma, x, 0, 0);
 }
 
-void	ft_convert_u(t_argu ma, int x)
+void	ft_convert_u(t_argu ma, int x, unsigned int	n2, unsigned int n3)
 {
-	unsigned int	n2;
-	unsigned int	n3;
-
 	n2 = va_arg(*ma.ptr, unsigned int);
 	if (n2 == 0 && ma.w_precision == 0 && ma.precision == 1)
 		ma.width++;
 	n3 = n2;
-	while (n3 /= 10)
+	while (n3 > 10)
+	{
+		n3 / 10;
 		x++;
+	}
 	if (ma.minus == 0)
 	{
 		ft_fill_nbr(ma, x);

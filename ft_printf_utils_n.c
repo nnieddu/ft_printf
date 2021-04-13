@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:42:59 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/08 16:04:09 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:09:33 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_base_p(unsigned long n, unsigned long base, int maj,
 t_argu ma)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (maj == 1)

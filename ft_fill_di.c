@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_di.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:38:02 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/17 21:27:52 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 14:59:09 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ void	ft_conversion_nbr(char *mf, int i, t_argu ma)
 		x++;
 		ma.w_precision++;
 	}
-	while (n2 /= 10)
+	while (n2 > 10)
+	{
+		n2 / 10;
 		x++;
+	}
 	if (n == 0 && ma.w_precision == 0 && ma.precision == 1)
 		ma.width++;
 	ft_conversion_nbr_n(mf[i], ma, n, x);
@@ -109,7 +112,7 @@ void	ft_fill_nbr_n(t_argu ma, int x)
 	if (ma.neg == 1)
 		*ma.ret += write(1, "-", 1);
 	while (ma.w_precision > x && ma.precision == 1 && x <= ma.w_precision
-	&& ma.minus == 0)
+		&& ma.minus == 0)
 	{
 		*ma.ret += write(1, "0", 1);
 		ma.w_precision--;

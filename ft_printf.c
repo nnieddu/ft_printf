@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 21:31:08 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/17 21:20:35 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:06:38 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(char const *format, ...)
+int	ft_printf(char const *format, ...)
 {
 	t_argu	ma;
 	int		i;
@@ -51,8 +51,8 @@ void	ft_parsing(char *mf, int i, t_argu ma)
 			i++;
 			ft_format(mf, i, ma);
 			while (mf[i] != 'c' && mf[i] != 's' && mf[i] != 'p'
-			&& mf[i] != 'd' && mf[i] != 'i' && mf[i] != 'u'
-			&& mf[i] != 'x' && mf[i] != 'X' && mf[i] != '%' && mf[i])
+				&& mf[i] != 'd' && mf[i] != 'i' && mf[i] != 'u'
+				&& mf[i] != 'x' && mf[i] != 'X' && mf[i] != '%' && mf[i])
 				i++;
 		}
 		else
@@ -64,8 +64,8 @@ void	ft_parsing(char *mf, int i, t_argu ma)
 void	ft_format(char *mf, int i, t_argu ma)
 {
 	while (mf[i] != 'c' && mf[i] != 's' && mf[i] != 'p' && mf[i] != 'd'
-	&& mf[i] != 'i' && mf[i] != 'u' && mf[i] != 'x' && mf[i] != 'X'
-	&& mf[i] != '%' && mf[i] != '.' && mf[i])
+		&& mf[i] != 'i' && mf[i] != 'u' && mf[i] != 'x' && mf[i] != 'X'
+		&& mf[i] != '%' && mf[i] != '.' && mf[i])
 	{
 		if (mf[i] == '*' && mf[i - 1] != '.' && ma.width == 0)
 			ma.width = va_arg(*ma.ptr, int);
@@ -87,8 +87,8 @@ void	ft_format(char *mf, int i, t_argu ma)
 void	ft_format_n(char *mf, int i, t_argu ma)
 {
 	while (mf[i] != 'c' && mf[i] != 's' && mf[i] != 'p' && mf[i] != 'd'
-	&& mf[i] != 'i' && mf[i] != 'u' && mf[i] != 'x' && mf[i] != 'X'
-	&& mf[i] != '%' && mf[i])
+		&& mf[i] != 'i' && mf[i] != 'u' && mf[i] != 'x' && mf[i] != 'X'
+		&& mf[i] != '%' && mf[i])
 	{
 		if (mf[i] == '.')
 		{
