@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 17:49:39 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/13 15:01:08 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:36:10 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_conversion_xx(char *mf, int i, t_argu ma)
 	}
 	while (n2 > 16)
 	{
-		n2 / 16;
+		n2 /= 16;
 		x++;
 	}
 	if (n == 0 && ma.w_precision == 0 && ma.precision == 1)

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 18:38:11 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/13 15:05:20 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 15:36:30 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_convert_pu_n(char mfi, t_argu ma, unsigned long n, int x)
 		n2 = n;
 		while (n2 > 16)
 		{
-			n2 / 16;
+			n2 /= 16;
 			x++;
 		}
 	}
@@ -97,7 +97,7 @@ void	ft_convert_u(t_argu ma, int x, unsigned int	n2, unsigned int n3)
 	n3 = n2;
 	while (n3 > 10)
 	{
-		n3 / 10;
+		n3 /= 10;
 		x++;
 	}
 	if (ma.minus == 0)
