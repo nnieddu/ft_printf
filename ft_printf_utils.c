@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:42:59 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/08 13:51:36 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 16:05:24 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,6 @@ int		ft_strlen_printf(char *s)
 	while (s[size])
 		size++;
 	return (size);
-}
-
-void	ft_putstr(char *str, t_argu ma)
-{
-	int		i;
-
-	i = 0;
-	if (ma.precision == 1)
-	{
-		while (ma.w_precision > 0 && str[i])
-		{
-			*ma.ret += write(1, &str[i], 1);
-			i++;
-			ma.w_precision--;
-		}
-	}
-	if (ma.precision == 0)
-	{
-		while (str[i])
-		{
-			*ma.ret += write(1, &str[i], 1);
-			i++;
-		}
-	}
 }
 
 int		ft_atoiformat(char *str, int i)

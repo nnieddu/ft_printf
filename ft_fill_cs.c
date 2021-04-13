@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:55:52 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/08 13:51:54 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 16:03:08 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,13 @@ void	ft_fill_r(t_argu ma, char *str)
 			ft_putchar(c, ma);
 			ma.width--;
 		}
-		ft_putstr(str, ma);
+		ft_putstrp(str, ma);
 	}
 }
 
 void	ft_fill_l(t_argu ma, char *str, char c)
 {
-	ft_putstr(str, ma);
+	ft_putstrp(str, ma);
 	if (ma.width >= 0)
 	{
 		if (ma.w_precision == 0 && ma.zero == 1)

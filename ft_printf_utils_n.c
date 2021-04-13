@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils_n.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:42:59 by ninieddu          #+#    #+#             */
-/*   Updated: 2020/02/18 12:01:05 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 16:04:09 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,22 @@ void	ft_putstrp(char *str, t_argu ma)
 	int		i;
 
 	i = 0;
-	while (str[i])
+	if (ma.precision == 1)
 	{
-		*ma.ret += write(1, &str[i], 1);
-		i++;
+		while (ma.w_precision > 0 && str[i])
+		{
+			*ma.ret += write(1, &str[i], 1);
+			i++;
+			ma.w_precision--;
+		}
+	}
+	if (ma.precision == 0)
+	{
+		while (str[i])
+		{
+			*ma.ret += write(1, &str[i], 1);
+			i++;
+		}
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 16:01:50 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/04/08 14:42:43 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 16:05:17 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void			ft_putchar(char c, t_argu ma);
 void			ft_conversion_s(t_argu ma);
 void			ft_conversion_nbr(char *mf, int i, t_argu ma);
 void			ft_conversion_nbr_n(char mfi, t_argu ma, int n, int x);
-void			ft_putstr(char *str, t_argu ma);
 void			ft_fill_r(t_argu ma, char *str);
 void			ft_fill_l(t_argu ma, char *str, char c);
 void			ft_convert_pu(char *mf, int i, t_argu ma);
